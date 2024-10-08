@@ -1,0 +1,41 @@
+# import random
+# def sumelem(lst):
+#     summ = 0
+#     for element in lst:
+#         if element > 0:
+#             summ += element
+#     return summ
+#
+#
+# my_list = [-1, 2, 3, -4, 5]
+# result = sumelem(my_list)
+# print("Сумма положительных элементов:", result)
+# NUMS = int(input('Введите число'))
+# NUMS1 = int(input('Введите первое число промежутка'))
+# NUMS2 = int(input('Введите второе число промежутка'))
+# if NUMS < NUMS2 and NUMS > NUMS1:
+#     print("Входит в промежуток")
+# Num = int(input('Введите число'))
+# data = []
+# for i in range(Num):
+#     data.append(random.randint(0,999))
+#     elem = max(data)
+#     elem1 = min(data)
+# def binary_SEARCH(data, elem):
+#     low = 0
+#     high = len(data) - 1
+#
+#     while low <= high:
+#
+#         middle = (low + high)//2
+#         if data[middle] == elem:
+#             return elem
+#         elif data[middle] > elem:
+#             high = middle - 1
+#         elif data[middle] < elem:
+#             low = middle + 1
+#     return - 1
+# binary_SEARCH(data, elem)
+# binary_SEARCH(data, elem1)
+# print(elem)
+# print(elem1)

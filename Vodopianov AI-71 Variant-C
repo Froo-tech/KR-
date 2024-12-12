@@ -1,0 +1,26 @@
+#Vodopianov AI-71 Variant-C
+
+
+lst = [13, 5]
+def net_summ(lst):
+    sum = 0
+    for i in lst:
+        if i % 2 != 0:
+            sum+=i
+    return sum
+
+def let_(a,b):
+    a = abs(a)
+    b = abs(b)
+    return a+b
+
+
+def yes_or_no(n):
+    if n <= 0:
+        return "No"
+    elif n == 1:
+        return "Yes"
+    elif n % 2 != 0:
+        return "No"
+    return yes_or_no(n // 2)
+print(yes_or_no(0))

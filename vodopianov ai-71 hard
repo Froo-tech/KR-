@@ -1,59 +1,67 @@
 import time
 import random
-def generate_matrix(n):
-    return [[random.randint(1, 100) for _ in range(n)]
 
+# Генерация матрицы n x n, заполненной случайными числами от 1 до 100
+def generate_matrix(n):
+    return [[random.randint(1, 100) for _ in range(n)]]
+
+# Сортировка столбцов матрицы
 def sort_colon(matrix):
-    n = len(matrix)
-    for col in range(n):
-        col_elem = [matrix[row][col] for row in range(n)]
+    n = len(matrix)  # Определяем размерность матрицы
+    for col in range(n):  # Проходим по каждому столбцу
+        col_elem = [matrix[row][col] for row in range(n)]  # Извлекаем элементы столбца
+        # Сортировка пузырьком
         for i in range(len(col_elem)):
             for j in range(i + 1, len(col_elem)):
                 if col_elem[i] > col_elem[j]:
                     col_elem[i], col_elem[j] = col_elem[j], col_elem[i]
+        # Записываем отсортированные значения обратно в матрицу
         for row in range(n):
             matrix[row][col] = col_elem[row]
     return matrix
 
+# Декоратор для подсчета времени выполнения функции
 def time_it(func):
     def wrapper(*args, **kwargs):
-        start_time = time.time()
-        result = func(*args, **kwargs)
-        end_time = time.time()
-        print(f"Время выполнения'{func.__name__}': {end_time - start_time:.5f} секунд")
+        start_time = time.time()  # Время начала
+        result = func(*args, **kwargs)  # Вызов самой функции
+        end_time = time.time()  # Время окончания
+        # Вывод времени выполнения
+        print(f"Время выполнения '{func.__name__}': {end_time - start_time:.5f} секунд")
         return result
     return wrapper
 
 @time_it
 def find_max(seq):
-    max_val = seq[0]
-    for num in seq:
+    max_val = seq[0]  # Инициализация максимального значения первым элементом
+    for num in seq:  # Проход по всем элементам последовательности
         if num > max_val:
-            max_val = num
+            max_val = num  # Обновление максимального значения
     return max_val
 
 @time_it
 def matrix_dvi(matrix):
-    mat = []
-    for i in matrix:
+    mat = []  # Инициализация новой матрицы
+    for i in matrix:  # Проход по каждой строке
+        # Увеличиваем каждую строку вдвое (удаляем последний элемент и дублируем)
         now_matrix = i[:-1] + i[:-1]
-        mat.append(now_matrix)
+        mat.append(now_matrix)  # Добавляем результат в новую матрицу
     return mat
 
-
-
-
+# Генерация последовательности n случайных чисел от 1 до 1000
 def gen_sequence(size):
     return [random.randint(1, 1000) for _ in range(size)]
 
+# Основная функция для запуска всех процессов
 def run(size):
-    seq = gen_sequence(size)
+    seq = gen_sequence(size)  # Генерация последовательности
 
-    max_iter = find_max(seq)
+    max_iter = find_max(seq)  # Нахождение максимального значения
     print(max_iter)
 
-    max_bubble = matrix_dvi(seq.copy())
+    max_bubble = matrix_dvi(seq.copy())  # Удвоение последовательности
     print(max_bubble)
 
+n = 1000  # Размер последовательности
+run(n)  # Запуск функции
 
-n = 1000

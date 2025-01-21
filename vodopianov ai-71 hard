@@ -1,0 +1,60 @@
+import time
+import random
+def generate_matrix(n):
+    return [[random.randint(1, 100) for _ in range(n)]
+
+def sort_colon(matrix):
+    n = len(matrix)
+    for col in range(n):
+        col_elem = [matrix[row][col] for row in range(n)]
+        for i in range(len(col_elem)):
+            for j in range(i + 1, len(col_elem)):
+                if col_elem[i] > col_elem[j]:
+                    col_elem[i], col_elem[j] = col_elem[j], col_elem[i]
+        for row in range(n):
+            matrix[row][col] = col_elem[row]
+    return matrix
+
+def time_it(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        print(f"Время выполнения'{func.__name__}': {end_time - start_time:.5f} секунд")
+        return result
+    return wrapper
+
+@time_it
+def find_max(seq):
+    max_val = seq[0]
+    for num in seq:
+        if num > max_val:
+            max_val = num
+    return max_val
+
+@time_it
+def matrix_dvi(matrix):
+    mat = []
+    for i in matrix:
+        now_matrix = i[:-1] + i[:-1]
+        mat.append(now_matrix)
+    return mat
+
+
+
+
+def generate_sequence(size):
+    return [random.randint(1, 1000) for _ in range(size)]
+
+def run_experiment(size):
+    seq = generate_sequence(size)
+
+    max_iter = find_max(seq)
+    print("Максимум (метод перебора):", max_iter)
+
+    max_bubble = matrix_dvi(seq.copy())
+    print("Максимум (пузырьковая сортировка):", max_bubble)
+
+
+n = 1000  
+run_experiment(n)

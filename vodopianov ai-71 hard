@@ -43,11 +43,11 @@ def matrix_dvi(matrix):
 
 
 
-def generate_sequence(size):
+def gen_sequence(size):
     return [random.randint(1, 1000) for _ in range(size)]
 
-def run_experiment(size):
-    seq = generate_sequence(size)
+def run(size):
+    seq = gen_sequence(size)
 
     max_iter = find_max(seq)
     print("Максимум (метод перебора):", max_iter)
@@ -56,5 +56,4 @@ def run_experiment(size):
     print("Максимум (пузырьковая сортировка):", max_bubble)
 
 
-n = 1000  
-run_experiment(n)
+n = 1000

@@ -50,10 +50,10 @@ def run(size):
     seq = gen_sequence(size)
 
     max_iter = find_max(seq)
-    print("Максимум (метод перебора):", max_iter)
+    print(max_iter)
 
     max_bubble = matrix_dvi(seq.copy())
-    print("Максимум (пузырьковая сортировка):", max_bubble)
+    print(max_bubble)
 
 
 n = 1000

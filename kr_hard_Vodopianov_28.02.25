@@ -1,0 +1,31 @@
+#1
+#print(1*2*3*4)
+#2
+# numbers = [1, 2, 3]
+# combinations = []
+# for i in range(len(numbers)):
+#     for j in range(i + 1, len(numbers)):
+#         combinations.append((numbers[i], numbers[j]))
+# for combo in combinations:
+#     print(combo)
+#3
+# lst = ["М", "И", "Р"]
+# elements = []
+# 
+# def duplicates(lst):
+#     return [[i] * 2 for i in lst]
+# 
+# def permutations(lst, start=0):
+#     if start == len(lst) - 1:
+#         elements.append(lst[:])  
+#         return
+#     for i in range(start, len(lst)):
+#         lst[start], lst[i] = lst[i], lst[start]  
+#         permutations(lst, start + 1)
+#         lst[start], lst[i] = lst[i], lst[start] 
+# 
+# elements.extend(duplicates(lst))
+# permutations(lst)
+# 
+# for index, elem in enumerate(elements):
+#     print(f"{index + 1}: {elem}")

@@ -1,0 +1,42 @@
+# Vodopianav AI-71 HARD
+# 1
+# class Animal:
+#     @staticmethod
+#     def walk():
+#         print("Animal walk")
+#
+# class Dog(Animal):
+#     @staticmethod
+#     def doge_make_sound():
+#         print("Woof woof")
+#
+# 2
+# class BankAccount:
+#     def __init__(self, initial_balance=0):
+#         self.__balance = initial_balance
+#
+#     def deposit(self, amount):
+#         if amount > 0:
+#             self.__balance += amount
+#
+#     def withdraw(self, amount):
+#         if amount > 0 and self.__balance >= amount:
+#             self.__balance -= amount
+#
+#     def get_balance(self):
+#         return self.__balance
+# class Rect:
+#     def __init__(self, width, height):
+#         self.width = width
+#         self.height = height
+# 
+#     def area(self):
+#         return self.width * self.height
+#
+# class Circle:
+#     def __init__(self, radius):
+#         self.radius = radius
+#
+#     def area(self):
+#         return 3.14 * self.radius ** 2
+#
